@@ -13,6 +13,10 @@
 		4C30C75C1E1D510100CF8C38 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4C30C75B1E1D510100CF8C38 /* Assets.xcassets */; };
 		4C30C75F1E1D510100CF8C38 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C30C75D1E1D510100CF8C38 /* LaunchScreen.storyboard */; };
 		4C30C76A1E1D510100CF8C38 /* ColmeiaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C30C7691E1D510100CF8C38 /* ColmeiaTests.swift */; };
+		4C30C7791E1D529900CF8C38 /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C30C7771E1D529900CF8C38 /* libsqlite3.0.tbd */; };
+		4C30C77A1E1D529900CF8C38 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C30C7781E1D529900CF8C38 /* libsqlite3.tbd */; };
+		4C30C77D1E1D537D00CF8C38 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C30C77B1E1D537D00CF8C38 /* Bolts.framework */; };
+		4C30C77E1E1D537D00CF8C38 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C30C77C1E1D537D00CF8C38 /* Parse.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +40,10 @@
 		4C30C7651E1D510100CF8C38 /* ColmeiaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ColmeiaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C30C7691E1D510100CF8C38 /* ColmeiaTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColmeiaTests.swift; sourceTree = "<group>"; };
 		4C30C76B1E1D510100CF8C38 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4C30C7771E1D529900CF8C38 /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
+		4C30C7781E1D529900CF8C38 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		4C30C77B1E1D537D00CF8C38 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = Colmeia/Bolts.framework; sourceTree = "<group>"; };
+		4C30C77C1E1D537D00CF8C38 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Parse.framework; path = Colmeia/Parse.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,6 +51,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4C30C77D1E1D537D00CF8C38 /* Bolts.framework in Frameworks */,
+				4C30C7791E1D529900CF8C38 /* libsqlite3.0.tbd in Frameworks */,
+				4C30C77E1E1D537D00CF8C38 /* Parse.framework in Frameworks */,
+				4C30C77A1E1D529900CF8C38 /* libsqlite3.tbd in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -62,6 +74,7 @@
 				4C30C7531E1D510100CF8C38 /* Colmeia */,
 				4C30C7681E1D510100CF8C38 /* ColmeiaTests */,
 				4C30C7521E1D510100CF8C38 /* Products */,
+				4C30C7761E1D529900CF8C38 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -80,9 +93,8 @@
 				4C30C7541E1D510100CF8C38 /* AppDelegate.swift */,
 				4C30C7561E1D510100CF8C38 /* ViewController.swift */,
 				4C30C7581E1D510100CF8C38 /* Main.storyboard */,
-				4C30C75B1E1D510100CF8C38 /* Assets.xcassets */,
+				4C30C7741E1D526900CF8C38 /* Resources */,
 				4C30C75D1E1D510100CF8C38 /* LaunchScreen.storyboard */,
-				4C30C7601E1D510100CF8C38 /* Info.plist */,
 			);
 			path = Colmeia;
 			sourceTree = "<group>";
@@ -94,6 +106,26 @@
 				4C30C76B1E1D510100CF8C38 /* Info.plist */,
 			);
 			path = ColmeiaTests;
+			sourceTree = "<group>";
+		};
+		4C30C7741E1D526900CF8C38 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				4C30C75B1E1D510100CF8C38 /* Assets.xcassets */,
+				4C30C7601E1D510100CF8C38 /* Info.plist */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		4C30C7761E1D529900CF8C38 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4C30C77B1E1D537D00CF8C38 /* Bolts.framework */,
+				4C30C77C1E1D537D00CF8C38 /* Parse.framework */,
+				4C30C7771E1D529900CF8C38 /* libsqlite3.0.tbd */,
+				4C30C7781E1D529900CF8C38 /* libsqlite3.tbd */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -342,6 +374,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = BEVC4JDNZX;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Colmeia",
+				);
 				INFOPLIST_FILE = Colmeia/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.vergil.Colmeia;
@@ -355,6 +391,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = BEVC4JDNZX;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Colmeia",
+				);
 				INFOPLIST_FILE = Colmeia/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.vergil.Colmeia;
@@ -412,6 +452,7 @@
 				4C30C7701E1D510100CF8C38 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		4C30C7711E1D510100CF8C38 /* Build configuration list for PBXNativeTarget "ColmeiaTests" */ = {
 			isa = XCConfigurationList;
@@ -420,6 +461,7 @@
 				4C30C7731E1D510100CF8C38 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
