@@ -10,7 +10,7 @@ import Parse
 
 class Requester: NSObject {
     
-    class func request(with className: String, _ completion: (([PFObject]?, Error?) -> ())?) {
+    class func request(_ className: String, _ completion: (([PFObject]?, Error?) -> ())?) {
         
         let query = PFQuery(className: className)
         
