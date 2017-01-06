@@ -7,19 +7,46 @@
 //
 
 import UIKit
+import Parse
 
 class ViewController: UIViewController {
 
+    var teachers: [Teacher] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        requestTeachers()
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    private func requestTeachers() {
+        
+        Requester.request("Professores") { (objects, error) in
+            
+            if error == nil {
+                
+                if let objects = objects {
+                    
+                    self.teachers = self.getTeachers(from: objects)
+                }
+            }
+        }
     }
-
+    
+    private func getTeachers(from pfObjects: [PFObject]) -> [Teacher] {
+        
+        let teachers = pfObjects.flatMap {
+            Teacher(pfObject: $0) { teacher in
+                self.teacherUpdatedPhoto(teacher)
+            }
+        }
+        
+        return teachers
+    }
+    
+    private func teacherUpdatedPhoto(_ teacher: Teacher) {
+        //update table view
+    }
 
 }
+
 
