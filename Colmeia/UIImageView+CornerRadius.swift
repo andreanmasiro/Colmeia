@@ -12,9 +12,14 @@ extension UIImageView /* CornerRadius */ {
     
     func setCornerRadius(_ cornerRadius: CGFloat) {
         
-        if !self.clipsToBounds {
-            self.clipsToBounds = true
+        if !self.layer.masksToBounds {
+            self.layer.masksToBounds = true
         }
         self.layer.cornerRadius = cornerRadius
+    }
+    
+    func setRound() {
+        let radius = min(frame.height, frame.width)/2
+        setCornerRadius(radius)
     }
 }
