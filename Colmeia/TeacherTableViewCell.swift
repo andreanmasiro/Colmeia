@@ -18,7 +18,6 @@ class TeacherTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
 
     func setName(_ name: String) {
@@ -33,8 +32,9 @@ class TeacherTableViewCell: UITableViewCell {
         ratingLabel.text = String(format: "%.2lf", rating)
     }
     
-    func setImage(_ image: UIImage) {
-        photoImageView.image = image
+    func setPhoto(_ photo: UIImage) {
+        photoImageView.image = photo
+        photoImageView.setRound()
     }
 
 }
