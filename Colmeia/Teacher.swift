@@ -38,7 +38,7 @@ import Parse
 
 extension Teacher /* PFObject parsing */ {
     
-    convenience init?(pfObject: PFObject, photoUpdateCompletionBlock: ((Data?, Error?) -> Void)?)  {
+    convenience init?(pfObject: PFObject, photoUpdateCompletionBlock: ((Teacher) -> Void)?)  {
         
         let objectId = pfObject.objectId
         let name = pfObject["nome"] as? String
@@ -64,7 +64,7 @@ extension Teacher /* PFObject parsing */ {
                     self.photo = data
                 }
                 
-                photoUpdateCompletionBlock?(data, error)
+                photoUpdateCompletionBlock?(self)
             }
         }
     }
