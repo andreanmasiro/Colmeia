@@ -12,7 +12,7 @@ class Teacher: NSObject {
     
     var objectId: String
     var name: String
-    var photo: NSData?
+    var photo: Data?
     var resume: String
     var subject: String
     var rating: Double
@@ -38,7 +38,7 @@ import Parse
 
 extension Teacher /* PFObject parsing */ {
     
-    convenience init?(pfObject: PFObject)  {
+    convenience init?(pfObject: PFObject, photoUpdateCompletionBlock: ((Data?, Error?) -> Void)?)  {
         
         let objectId = pfObject.objectId
         let name = pfObject["nome"] as? String
@@ -57,6 +57,15 @@ extension Teacher /* PFObject parsing */ {
                       resume: resume!,
                       subject: subject!,
                       rating: rating!)
+            
+            photo?.getDataInBackground { (data, error) in
+                
+                if let data = data {
+                    self.photo = data
+                }
+                
+                photoUpdateCompletionBlock?(data, error)
+            }
         }
     }
 }
