@@ -33,3 +33,30 @@ class Teacher: NSObject {
     }
     
 }
+
+import Parse
+
+extension Teacher /* PFObject parsing */ {
+    
+    convenience init?(pfObject: PFObject)  {
+        
+        let objectId = pfObject.objectId
+        let name = pfObject["nome"] as? String
+        let photo = pfObject["imagem"] as? PFFile
+        let resume = pfObject["curriculo"] as? String
+        let subject = pfObject["materia"] as? String
+        let rating = pfObject["nota"] as? Double
+        
+        if objectId == nil || name == nil || photo == nil || resume == nil || subject == nil || rating == nil {
+            
+            return nil
+        } else {
+
+            self.init(objectId: objectId!,
+                      name: name!,
+                      resume: resume!,
+                      subject: subject!,
+                      rating: rating!)
+        }
+    }
+}
