@@ -11,6 +11,9 @@ import Parse
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var teacherTableView: UITableView!
+    static let teacherTableViewCellHeight: CGFloat = 101.0
+    
     var teachers: [Teacher] = []
     
     override func viewDidLoad() {
@@ -45,8 +48,40 @@ class ViewController: UIViewController {
     
     private func teacherUpdatedPhoto(_ teacher: Teacher) {
         //update table view
+        teacherTableView.reloadData()
     }
 
 }
 
+extension ViewController: UITableViewDelegate, UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return teachers.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        if let cell = tableView.dequeueReusableCell(withIdentifier: "teacherCell", for: indexPath) as? TeacherTableViewCell {
+            
+            let teacher = teachers[indexPath.row]
+            
+            cell.setName(teacher.name)
+            cell.setRating(teacher.rating)
+            cell.setSubject(teacher.subject)
+            
+            if let data = teacher.photo {
+                if let photo = UIImage(data: data) {
+                    cell.setPhoto(photo)
+                }
+            }
+            
+            return cell
+        } else {
+            return UITableViewCell()
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return ViewController.teacherTableViewCellHeight
+    }
+}
 
