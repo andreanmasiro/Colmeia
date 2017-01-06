@@ -21,6 +21,7 @@
 		4C30C7821E1D576400CF8C38 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C30C7811E1D576400CF8C38 /* SystemConfiguration.framework */; };
 		4C30C7881E1D5BED00CF8C38 /* Teacher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C30C7871E1D5BED00CF8C38 /* Teacher.swift */; };
 		4C30C78D1E1D620E00CF8C38 /* Requester.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C30C78C1E1D620E00CF8C38 /* Requester.swift */; };
+		4C5386851E1F3D3500F26360 /* TeacherTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C5386841E1F3D3500F26360 /* TeacherTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +53,7 @@
 		4C30C7811E1D576400CF8C38 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		4C30C7871E1D5BED00CF8C38 /* Teacher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Teacher.swift; sourceTree = "<group>"; };
 		4C30C78C1E1D620E00CF8C38 /* Requester.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Requester.swift; sourceTree = "<group>"; };
+		4C5386841E1F3D3500F26360 /* TeacherTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeacherTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +102,7 @@
 		4C30C7531E1D510100CF8C38 /* Colmeia */ = {
 			isa = PBXGroup;
 			children = (
+				4C5386831E1F3D2100F26360 /* View */,
 				4C30C78B1E1D61FB00CF8C38 /* Parser */,
 				4C30C78A1E1D609200CF8C38 /* Requester */,
 				4C30C7861E1D58FB00CF8C38 /* Model */,
@@ -172,6 +175,14 @@
 			children = (
 			);
 			name = Parser;
+			sourceTree = "<group>";
+		};
+		4C5386831E1F3D2100F26360 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				4C5386841E1F3D3500F26360 /* TeacherTableViewCell.swift */,
+			);
+			name = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -280,6 +291,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4C30C7881E1D5BED00CF8C38 /* Teacher.swift in Sources */,
+				4C5386851E1F3D3500F26360 /* TeacherTableViewCell.swift in Sources */,
 				4C30C7571E1D510100CF8C38 /* ViewController.swift in Sources */,
 				4C30C78D1E1D620E00CF8C38 /* Requester.swift in Sources */,
 				4C30C7551E1D510100CF8C38 /* AppDelegate.swift in Sources */,
