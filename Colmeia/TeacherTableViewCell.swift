@@ -21,10 +21,20 @@ class TeacherTableViewCell: UITableViewCell {
         // Initialization code
     }
 
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+    func setName(_ name: String) {
+        nameLabel.text = name
+    }
+    
+    func setSubject(_ subject: String) {
+        subjectLabel.text = subject
+    }
+    
+    func setRating(_ rating: Double) {
+        ratingLabel.text = String(format: "%.2lf", rating)
+    }
+    
+    func setImage(_ image: UIImage) {
+        photoImageView.image = image
     }
 
 }
