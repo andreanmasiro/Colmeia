@@ -17,6 +17,10 @@
 		4C30C77A1E1D529900CF8C38 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C30C7781E1D529900CF8C38 /* libsqlite3.tbd */; };
 		4C30C77D1E1D537D00CF8C38 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C30C77B1E1D537D00CF8C38 /* Bolts.framework */; };
 		4C30C77E1E1D537D00CF8C38 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C30C77C1E1D537D00CF8C38 /* Parse.framework */; };
+		4C30C7801E1D575E00CF8C38 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C30C77F1E1D575E00CF8C38 /* AudioToolbox.framework */; };
+		4C30C7821E1D576400CF8C38 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C30C7811E1D576400CF8C38 /* SystemConfiguration.framework */; };
+		4C30C7881E1D5BED00CF8C38 /* Teacher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C30C7871E1D5BED00CF8C38 /* Teacher.swift */; };
+		4C30C78D1E1D620E00CF8C38 /* Requester.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C30C78C1E1D620E00CF8C38 /* Requester.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +48,10 @@
 		4C30C7781E1D529900CF8C38 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		4C30C77B1E1D537D00CF8C38 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = Colmeia/Bolts.framework; sourceTree = "<group>"; };
 		4C30C77C1E1D537D00CF8C38 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Parse.framework; path = Colmeia/Parse.framework; sourceTree = "<group>"; };
+		4C30C77F1E1D575E00CF8C38 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		4C30C7811E1D576400CF8C38 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		4C30C7871E1D5BED00CF8C38 /* Teacher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Teacher.swift; sourceTree = "<group>"; };
+		4C30C78C1E1D620E00CF8C38 /* Requester.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Requester.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +59,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4C30C7821E1D576400CF8C38 /* SystemConfiguration.framework in Frameworks */,
+				4C30C7801E1D575E00CF8C38 /* AudioToolbox.framework in Frameworks */,
 				4C30C77D1E1D537D00CF8C38 /* Bolts.framework in Frameworks */,
 				4C30C7791E1D529900CF8C38 /* libsqlite3.0.tbd in Frameworks */,
 				4C30C77E1E1D537D00CF8C38 /* Parse.framework in Frameworks */,
@@ -90,11 +100,13 @@
 		4C30C7531E1D510100CF8C38 /* Colmeia */ = {
 			isa = PBXGroup;
 			children = (
+				4C30C78B1E1D61FB00CF8C38 /* Parser */,
+				4C30C78A1E1D609200CF8C38 /* Requester */,
+				4C30C7861E1D58FB00CF8C38 /* Model */,
 				4C30C7541E1D510100CF8C38 /* AppDelegate.swift */,
 				4C30C7561E1D510100CF8C38 /* ViewController.swift */,
-				4C30C7581E1D510100CF8C38 /* Main.storyboard */,
+				4C30C7891E1D608600CF8C38 /* Storyboard */,
 				4C30C7741E1D526900CF8C38 /* Resources */,
-				4C30C75D1E1D510100CF8C38 /* LaunchScreen.storyboard */,
 			);
 			path = Colmeia;
 			sourceTree = "<group>";
@@ -120,12 +132,46 @@
 		4C30C7761E1D529900CF8C38 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				4C30C7811E1D576400CF8C38 /* SystemConfiguration.framework */,
+				4C30C77F1E1D575E00CF8C38 /* AudioToolbox.framework */,
 				4C30C77B1E1D537D00CF8C38 /* Bolts.framework */,
 				4C30C77C1E1D537D00CF8C38 /* Parse.framework */,
 				4C30C7771E1D529900CF8C38 /* libsqlite3.0.tbd */,
 				4C30C7781E1D529900CF8C38 /* libsqlite3.tbd */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		4C30C7861E1D58FB00CF8C38 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				4C30C7871E1D5BED00CF8C38 /* Teacher.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		4C30C7891E1D608600CF8C38 /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				4C30C7581E1D510100CF8C38 /* Main.storyboard */,
+				4C30C75D1E1D510100CF8C38 /* LaunchScreen.storyboard */,
+			);
+			name = Storyboard;
+			sourceTree = "<group>";
+		};
+		4C30C78A1E1D609200CF8C38 /* Requester */ = {
+			isa = PBXGroup;
+			children = (
+				4C30C78C1E1D620E00CF8C38 /* Requester.swift */,
+			);
+			name = Requester;
+			sourceTree = "<group>";
+		};
+		4C30C78B1E1D61FB00CF8C38 /* Parser */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Parser;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -233,7 +279,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4C30C7881E1D5BED00CF8C38 /* Teacher.swift in Sources */,
 				4C30C7571E1D510100CF8C38 /* ViewController.swift in Sources */,
+				4C30C78D1E1D620E00CF8C38 /* Requester.swift in Sources */,
 				4C30C7551E1D510100CF8C38 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
