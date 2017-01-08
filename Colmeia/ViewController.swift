@@ -25,6 +25,9 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         setUpSearchController()
         requestTeachers()
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(ViewController.keyboardDidShow), name: NSNotification.Name.UIKeyboardDidShow, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(ViewController.keyboardDidHide), name: NSNotification.Name.UIKeyboardDidHide, object: nil)
     }
 
     private func requestTeachers() {
@@ -141,6 +144,30 @@ extension ViewController: UISearchResultsUpdating {
     private func filterTeachers(for searchText: String) {
         filteredTeachers = teachers.filter {
             $0.name.lowercased().hasPrefix(searchText.lowercased())
+        }
+    }
+}
+
+extension ViewController /* polishing */ {
+    
+    func keyboardDidShow(notification: NSNotification) {
+        let keyboardSize = (notification.userInfo![UIKeyboardFrameBeginUserInfoKey] as! NSValue).cgRectValue.size
+        
+        let contentInsets: UIEdgeInsets
+        if (UIInterfaceOrientationIsPortrait((UIApplication.shared.statusBarOrientation))) {
+            contentInsets = UIEdgeInsets(top: 0.0, left: 0.0, bottom: keyboardSize.height, right: 0.0)
+        } else {
+            contentInsets = UIEdgeInsets(top: 0.0, left: 0.0, bottom: keyboardSize.width, right: 0.0)
+        }
+        
+        teacherTableView.contentInset = contentInsets
+        teacherTableView.scrollIndicatorInsets = contentInsets
+    }
+    
+    func keyboardDidHide(notification: NSNotification) {
+        UIView.animate(withDuration: 0.25) {
+            self.teacherTableView.contentInset = UIEdgeInsets.zero
+            self.teacherTableView.scrollIndicatorInsets = UIEdgeInsets.zero
         }
     }
 }
