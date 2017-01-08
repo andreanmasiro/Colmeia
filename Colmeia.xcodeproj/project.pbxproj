@@ -24,6 +24,8 @@
 		4C5386851E1F3D3500F26360 /* TeacherTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C5386841E1F3D3500F26360 /* TeacherTableViewCell.swift */; };
 		4C5386871E1F3DF000F26360 /* UIImageView+CornerRadius.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C5386861E1F3DF000F26360 /* UIImageView+CornerRadius.swift */; };
 		4C53868A1E1F440A00F26360 /* Array+Nil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C5386891E1F440A00F26360 /* Array+Nil.swift */; };
+		4CFD54321E2293520063A43B /* RatingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4CFD54311E2293520063A43B /* RatingView.xib */; };
+		4CFD54341E22955E0063A43B /* RatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CFD54331E22955E0063A43B /* RatingView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +60,8 @@
 		4C5386841E1F3D3500F26360 /* TeacherTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeacherTableViewCell.swift; sourceTree = "<group>"; };
 		4C5386861E1F3DF000F26360 /* UIImageView+CornerRadius.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImageView+CornerRadius.swift"; sourceTree = "<group>"; };
 		4C5386891E1F440A00F26360 /* Array+Nil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Array+Nil.swift"; sourceTree = "<group>"; };
+		4CFD54311E2293520063A43B /* RatingView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RatingView.xib; sourceTree = "<group>"; };
+		4CFD54331E22955E0063A43B /* RatingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RatingView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -187,6 +191,8 @@
 			children = (
 				4C5386841E1F3D3500F26360 /* TeacherTableViewCell.swift */,
 				4C5386861E1F3DF000F26360 /* UIImageView+CornerRadius.swift */,
+				4CFD54311E2293520063A43B /* RatingView.xib */,
+				4CFD54331E22955E0063A43B /* RatingView.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -287,6 +293,7 @@
 				4C30C75F1E1D510100CF8C38 /* LaunchScreen.storyboard in Resources */,
 				4C30C75C1E1D510100CF8C38 /* Assets.xcassets in Resources */,
 				4C30C75A1E1D510100CF8C38 /* Main.storyboard in Resources */,
+				4CFD54321E2293520063A43B /* RatingView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -307,6 +314,7 @@
 				4C5386871E1F3DF000F26360 /* UIImageView+CornerRadius.swift in Sources */,
 				4C30C7881E1D5BED00CF8C38 /* Teacher.swift in Sources */,
 				4C5386851E1F3D3500F26360 /* TeacherTableViewCell.swift in Sources */,
+				4CFD54341E22955E0063A43B /* RatingView.swift in Sources */,
 				4C30C7571E1D510100CF8C38 /* ViewController.swift in Sources */,
 				4C30C78D1E1D620E00CF8C38 /* Requester.swift in Sources */,
 				4C53868A1E1F440A00F26360 /* Array+Nil.swift in Sources */,
