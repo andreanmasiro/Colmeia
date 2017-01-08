@@ -11,15 +11,19 @@ import Parse
 
 class ViewController: UIViewController {
 
+    let searchController = UISearchController(searchResultsController: nil)
+    
     @IBOutlet weak var teacherTableView: UITableView!
     static let teacherTableViewCellHeight: CGFloat = 101.0
     
     var teachers: [Teacher] = []
+    var filteredTeachers: [Teacher] = []
     
     var resumeAlert: UIAlertController?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setUpSearchController()
         requestTeachers()
     }
 
@@ -32,6 +36,7 @@ class ViewController: UIViewController {
                 if let objects = objects {
                     
                     self.teachers = self.getTeachers(from: objects)
+                    self.filteredTeachers = self.teachers
                 }
             }
         }
@@ -83,13 +88,13 @@ class ViewController: UIViewController {
 extension ViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return teachers.count
+        return filteredTeachers.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(withIdentifier: "teacherCell", for: indexPath) as? TeacherTableViewCell {
             
-            let teacher = teachers[indexPath.row]
+            let teacher = filteredTeachers[indexPath.row]
             
             cell.setName(teacher.name)
             cell.setRating(teacher.rating)
@@ -112,10 +117,31 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let teacher = teachers[indexPath.row]
+        let teacher = filteredTeachers[indexPath.row]
         showResume(teacher)
         
         tableView.deselectRow(at: indexPath, animated: true)
+    }
+}
+
+extension ViewController: UISearchResultsUpdating {
+    
+    public func updateSearchResults(for searchController: UISearchController) {
+        filterTeachers(for: searchController.searchBar.text!)
+        teacherTableView.reloadData()
+    }
+    
+    func setUpSearchController() {
+        searchController.searchResultsUpdater = self
+        searchController.dimsBackgroundDuringPresentation = false
+        definesPresentationContext = true
+        teacherTableView.tableHeaderView = searchController.searchBar
+    }
+    
+    private func filterTeachers(for searchText: String) {
+        filteredTeachers = teachers.filter {
+            $0.name.lowercased().hasPrefix(searchText.lowercased())
+        }
     }
 }
 
