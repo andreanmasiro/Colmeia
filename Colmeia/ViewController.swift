@@ -16,6 +16,8 @@ class ViewController: UIViewController {
     
     var teachers: [Teacher] = []
     
+    var resumeAlert: UIAlertController?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         requestTeachers()
@@ -47,8 +49,33 @@ class ViewController: UIViewController {
     }
     
     private func teacherUpdatedPhoto(_ teacher: Teacher) {
-        //update table view
         teacherTableView.reloadData()
+    }
+    
+    func makeResumeAlertController() {
+        
+        let alert = UIAlertController(title: "", message: "", preferredStyle: .alert)
+        
+        let dismissAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+        alert.addAction(dismissAction)
+        
+        resumeAlert = alert
+    }
+    
+    func showResume(_ teacher: Teacher) {
+        
+        var alert: UIAlertController!
+        if let _alert = resumeAlert {
+            alert = _alert
+        } else {
+            makeResumeAlertController()
+            alert = resumeAlert
+        }
+        
+        alert.title = teacher.name
+        alert.message = teacher.resume
+        
+        present(alert, animated: true, completion: nil)
     }
 
 }
@@ -82,6 +109,13 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return ViewController.teacherTableViewCellHeight
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let teacher = teachers[indexPath.row]
+        showResume(teacher)
+        
+        tableView.deselectRow(at: indexPath, animated: true)
     }
 }
 
