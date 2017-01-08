@@ -154,11 +154,7 @@ extension ViewController /* polishing */ {
         let keyboardSize = (notification.userInfo![UIKeyboardFrameBeginUserInfoKey] as! NSValue).cgRectValue.size
         
         let contentInsets: UIEdgeInsets
-        if (UIInterfaceOrientationIsPortrait((UIApplication.shared.statusBarOrientation))) {
-            contentInsets = UIEdgeInsets(top: 0.0, left: 0.0, bottom: keyboardSize.height, right: 0.0)
-        } else {
-            contentInsets = UIEdgeInsets(top: 0.0, left: 0.0, bottom: keyboardSize.width, right: 0.0)
-        }
+        contentInsets = UIEdgeInsets(top: 0.0, left: 0.0, bottom: keyboardSize.height, right: 0.0)
         
         teacherTableView.contentInset = contentInsets
         teacherTableView.scrollIndicatorInsets = contentInsets
